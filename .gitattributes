@@ -1,0 +1,33 @@
+# Normalize line endings: let Git decide, checkout native
+* text=auto
+
+# Unity YAML assets — force LF and use union merge to reduce conflicts
+*.cs                text eol=lf diff=csharp
+*.shader            text eol=lf
+*.meta              text eol=lf merge=union
+*.unity             text eol=lf merge=union
+*.asset             text eol=lf merge=union
+*.prefab            text eol=lf merge=union
+*.mat               text eol=lf merge=union
+*.controller        text eol=lf merge=union
+*.anim              text eol=lf merge=union
+*.physicMaterial    text eol=lf merge=union
+*.inputactions      text eol=lf
+*.json              text eol=lf
+*.md                text eol=lf
+*.py                text eol=lf
+*.ps1               text eol=lf
+*.bat               text eol=crlf
+# Binary media assets tracked via Git LFS (narration/voice WAVs, models, textures).
+# The filter=lfs lines also imply binary (-text), so no separate `binary` line needed.
+*.wav   filter=lfs diff=lfs merge=lfs -text
+*.mp3   filter=lfs diff=lfs merge=lfs -text
+*.ogg   filter=lfs diff=lfs merge=lfs -text
+*.fbx   filter=lfs diff=lfs merge=lfs -text
+*.png   filter=lfs diff=lfs merge=lfs -text
+*.jpg   filter=lfs diff=lfs merge=lfs -text
+*.jpeg  filter=lfs diff=lfs merge=lfs -text
+*.tga   filter=lfs diff=lfs merge=lfs -text
+*.psd   filter=lfs diff=lfs merge=lfs -text
+*.dll   filter=lfs diff=lfs merge=lfs -text
+*.so    filter=lfs diff=lfs merge=lfs -text
